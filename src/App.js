@@ -4,7 +4,10 @@ import { Form, Button, Navbar, Nav, Card, Container, Row, Col } from 'react-boot
 import { Name } from './Constants';
 import Home from './Home';
 import Game from './Game';
-import Box from '3box'
+import Box from '3box';
+import Web3 from 'web3';
+import { ABI } from './ABI';
+import { ERC20Abi } from './IERC20';
 
 export default class App extends Component {
 
@@ -30,6 +33,22 @@ export default class App extends Component {
       console.log('spacelist', spaceList)
       const followers = await Box.getSpace(this.state.accounts[0], 'MyFollowers');
       console.log("followers", followers)
+
+      const web3 = new Web3(window.ethereum)
+
+      const address = '0x9Eb6a33451643A564049f6D65b077E3308717b54' // kovan
+
+      const viralBankcontract = new web3.eth.Contract(ABI, address);
+      const erc20 = new web3.eth.Contract(ERC20Abi, "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD")
+      console.log("contract", viralBankcontract, erc20)
+      this.setState({viralBankcontract, erc20})
+      const MAX_UINT256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
+
+      // //approves DAPP to send DAI
+      // const receipt = await erc20.methods.approve(address, MAX_UINT256).send({from : this.state.accounts[0]});
+      // console.log(receipt)
+
+    
       // Now MetaMask's provider has been enabled, we can start working with 3Box
     }
   }
@@ -65,7 +84,12 @@ export default class App extends Component {
                   />
                 </Route>
                 <Route path="/game">
-                  <Game />
+                  <Game 
+                    accounts={this.state.accounts} 
+                    erc20={this.state.erc20} 
+                    viralBankcontract={this.state.viralBankcontract}
+                    newJoiner={false} 
+                    />
                 </Route>
                 <Route path="/">
                   <Home
