@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default class Game extends Component {
+    handleButton = async()=>{
+        const address = '0x9Eb6a33451643A564049f6D65b077E3308717b54' // kovan
+
+        const MAX_UINT256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
+
+        //approves DAPP to send DAI
+        const receipt = await  this.props.erc20.methods.approve(address, MAX_UINT256).send({from : this.props.accounts[0]});
+        console.log(receipt)
+    }
+
     render() {
         return (<div>
             <Container>
@@ -28,7 +38,7 @@ export default class Game extends Component {
                     </Col>
                 </Row>
                 <Row style={{marginTop : '20px'}}>
-                    <Button style={{margin : 'auto', borderRadius: '50px'}}>Join Game</Button>
+                    <Button style={{margin : 'auto', borderRadius: '50px'}} onClick={this.handleButton}>Join Game</Button>
                 </Row>
                 <Row style={{marginTop : '20px'}}>
                     <h2>Players</h2>
