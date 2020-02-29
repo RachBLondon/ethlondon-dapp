@@ -47,7 +47,7 @@ export default class App extends Component {
             {this.state.accounts && (
               <Nav fill style={{ width: "100%" }} >
                 <Nav.Item><Link to="/">Home</Link></Nav.Item>
-                <Nav.Item><Link to="/game">Game</Link></Nav.Item>
+                <Nav.Item><Link to="/game">Play and save</Link></Nav.Item>
                 <Nav.Item><Link to="/friends">Friends</Link></Nav.Item>
                 <Nav.Item><Link to="/stats">Stats</Link></Nav.Item>
               </Nav>
@@ -61,6 +61,7 @@ export default class App extends Component {
                 <Route path="/friends">
                   <h1 className="text-center">Friends</h1>
                   <p className="lead text-center">How are your friends doing</p>
+                  <p className="text-center">You have earned extra <strong>0.5%</strong> interest thru your friends</p>
                   <div className="leaderboard-wrapper">
                     <img src={leaderboardImage} alt="Leaderboard" />
                   </div>
