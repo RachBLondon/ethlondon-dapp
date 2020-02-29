@@ -87,7 +87,8 @@ export default class App extends Component {
                   <Game 
                     accounts={this.state.accounts} 
                     erc20={this.state.erc20} 
-                    viralBankcontract={this.state.viralBankcontract} 
+                    viralBankcontract={this.state.viralBankcontract}
+                    newJoiner={false} 
                     />
                 </Route>
                 <Route path="/">
