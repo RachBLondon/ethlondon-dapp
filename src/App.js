@@ -4,10 +4,14 @@ import { Form, Button, Navbar, Nav, Card, Container, Row, Col } from 'react-boot
 import { Name } from './Constants';
 import Home from './Home';
 import Game from './Game';
+
 import Box from '3box';
 import Web3 from 'web3';
 import { ABI } from './ABI';
 import { ERC20Abi } from './IERC20';
+import Box from '3box'
+import leaderboardImage from './leaderboard.png';
+
 
 export default class App extends Component {
 
@@ -48,7 +52,7 @@ export default class App extends Component {
       // const receipt = await erc20.methods.approve(address, MAX_UINT256).send({from : this.state.accounts[0]});
       // console.log(receipt)
 
-    
+
       // Now MetaMask's provider has been enabled, we can start working with 3Box
     }
   }
@@ -65,37 +69,84 @@ export default class App extends Component {
             {this.state.accounts && (
               <Nav fill style={{ width: "100%" }} >
                 <Nav.Item><Link to="/">Home</Link></Nav.Item>
-                <Nav.Item><Link to="/profile">Profile Update</Link></Nav.Item>
-                <Nav.Item><Link to="/game">Game</Link></Nav.Item>
+                <Nav.Item><Link to="/game">Play and save</Link></Nav.Item>
+                <Nav.Item><Link to="/friends">Friends</Link></Nav.Item>
+                <Nav.Item><Link to="/stats">Stats</Link></Nav.Item>
               </Nav>
             )}
-
           </Navbar>
           <div className="container" style={{ paddingTop: '50px' }}>
-            <h1>{Name}</h1>
-            <p>Save together</p>
             {this.state.needToAWeb3Browser && <h2>Please install metamask🦊</h2>}
             {(!this.state.needToAWeb3Browser && !this.state.accounts) && <h2>Connect MetaMask🤝</h2>}
             {this.state.accounts && (
               <Switch>
-                <Route path="/profile">
-                  <Profile
-                    ethAddress={this.state.accounts[0]}
-                  />
+                <Route path="/friends">
+                  <h1 className="text-center">Friends</h1>
+                  <p className="lead text-center">How are your friends doing</p>
+                  <p className="text-center">You have earned extra <strong>0.5%</strong> interest thru your friends</p>
+                  <div className="leaderboard-wrapper">
+                    <img src={leaderboardImage} alt="Leaderboard" />
+                  </div>
                 </Route>
                 <Route path="/game">
-                  <Game 
-                    accounts={this.state.accounts} 
-                    erc20={this.state.erc20} 
+                  <Game
+                    accounts={this.state.accounts}
+                    erc20={this.state.erc20}
                     viralBankcontract={this.state.viralBankcontract}
-                    newJoiner={false} 
+                    newJoiner={false}
                     />
+                </Route>
+                <Route path="/stats">
+                  <h2>Overview</h2>
+                  <table className="table table-listing">
+                    <tr>
+                      <th>Game started</th>
+                      <td>29.2.2020</td>
+                    </tr>
+
+                    <tr>
+                      <th>Players</th>
+                      <td>4</td>
+                    </tr>
+
+                    <tr>
+                      <th>Active</th>
+                      <td>3</td>
+                    </tr>
+
+                    <tr>
+                      <th>Lost</th>
+                      <td>1</td>
+                    </tr>
+
+                    <tr>
+                      <th>aDAI prize pot</th>
+                      <td>1.12 DAI</td>
+                    </tr>
+
+                    <tr>
+                      <th>Days before end</th>
+                      <td>355</td>
+                    </tr>
+                  </table>
+                  <h2>Top infectors</h2>
+                  <table className="table table-listing">
+                    <tr>
+                      <th>Patient0</th>
+                      <td>3 friends</td>
+                    </tr>
+                    <tr>
+                      <th>Rachel</th>
+                      <td>1 friends</td>
+                    </tr>
+                  </table>
                 </Route>
                 <Route path="/">
                   <Home
                     ethAddress={this.state.accounts[0]}
                   />
                 </Route>
+
               </Switch>
             )}
           </div>
