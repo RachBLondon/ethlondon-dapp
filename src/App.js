@@ -101,7 +101,17 @@ export default class App extends Component {
                       <th>Days before end</th>
                       <td>355</td>
                     </tr>
-
+                  </table>
+                  <h2>Top infectors</h2>
+                  <table className="table table-listing">
+                    <tr>
+                      <th>Patient0</th>
+                      <td>3 friends</td>
+                    </tr>
+                    <tr>
+                      <th>Rachel</th>
+                      <td>1 friends</td>
+                    </tr>
                   </table>
                 </Route>
                 <Route path="/">
