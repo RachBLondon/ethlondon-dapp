@@ -47,24 +47,20 @@ export default class App extends Component {
             {this.state.accounts && (
               <Nav fill style={{ width: "100%" }} >
                 <Nav.Item><Link to="/">Home</Link></Nav.Item>
-                <Nav.Item><Link to="/leaderboard">Leaderboard</Link></Nav.Item>
                 <Nav.Item><Link to="/game">Game</Link></Nav.Item>
+                <Nav.Item><Link to="/friends">Friends</Link></Nav.Item>
+                <Nav.Item><Link to="/stats">Stats</Link></Nav.Item>
               </Nav>
             )}
-
-
-
-
           </Navbar>
           <div className="container" style={{ paddingTop: '50px' }}>
-            <h1>{Name}</h1>
-            <p>Save together</p>
             {this.state.needToAWeb3Browser && <h2>Please install metamask🦊</h2>}
             {(!this.state.needToAWeb3Browser && !this.state.accounts) && <h2>Connect MetaMask🤝</h2>}
             {this.state.accounts && (
               <Switch>
-                <Route path="/leaderboard">
-                  <span>xxxx</span>
+                <Route path="/friends">
+                  <h1 className="text-center">Friends</h1>
+                  <p className="lead text-center">How are your friends doing</p>
                   <div className="leaderboard-wrapper">
                     <img src={leaderboardImage} alt="Leaderboard" />
                   </div>
@@ -72,11 +68,47 @@ export default class App extends Component {
                 <Route path="/game">
                   <Game />
                 </Route>
+                <Route path="/stats">
+                  <h2>Overview</h2>
+                  <table className="table table-listing">
+                    <tr>
+                      <th>Game started</th>
+                      <td>29.2.2020</td>
+                    </tr>
+
+                    <tr>
+                      <th>Players</th>
+                      <td>4</td>
+                    </tr>
+
+                    <tr>
+                      <th>Active</th>
+                      <td>3</td>
+                    </tr>
+
+                    <tr>
+                      <th>Lost</th>
+                      <td>1</td>
+                    </tr>
+
+                    <tr>
+                      <th>aDAI prize pot</th>
+                      <td>1.12 DAI</td>
+                    </tr>
+
+                    <tr>
+                      <th>Days before end</th>
+                      <td>355</td>
+                    </tr>
+
+                  </table>
+                </Route>
                 <Route path="/">
                   <Home
                     ethAddress={this.state.accounts[0]}
                   />
                 </Route>
+
               </Switch>
             )}
           </div>
