@@ -5,6 +5,7 @@ import { Name } from './Constants';
 import Home from './Home';
 import Game from './Game';
 import Box from '3box'
+import leaderboardImage from './leaderboard.png';
 
 export default class App extends Component {
 
@@ -46,10 +47,13 @@ export default class App extends Component {
             {this.state.accounts && (
               <Nav fill style={{ width: "100%" }} >
                 <Nav.Item><Link to="/">Home</Link></Nav.Item>
-                <Nav.Item><Link to="/profile">Profile Update</Link></Nav.Item>
+                <Nav.Item><Link to="/leaderboard">Leaderboard</Link></Nav.Item>
                 <Nav.Item><Link to="/game">Game</Link></Nav.Item>
               </Nav>
             )}
+
+
+
 
           </Navbar>
           <div className="container" style={{ paddingTop: '50px' }}>
@@ -59,10 +63,11 @@ export default class App extends Component {
             {(!this.state.needToAWeb3Browser && !this.state.accounts) && <h2>Connect MetaMask🤝</h2>}
             {this.state.accounts && (
               <Switch>
-                <Route path="/profile">
-                  <Profile
-                    ethAddress={this.state.accounts[0]}
-                  />
+                <Route path="/leaderboard">
+                  <span>xxxx</span>
+                  <div className="leaderboard-wrapper">
+                    <img src={leaderboardImage} alt="Leaderboard" />
+                  </div>
                 </Route>
                 <Route path="/game">
                   <Game />

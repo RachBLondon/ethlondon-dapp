@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.leaderboard-wrapper img {
+  max-width: 90%;
+  margin: 0 auto;
+}
