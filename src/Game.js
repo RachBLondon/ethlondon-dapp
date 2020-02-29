@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export default class Game extends Component {
     render() {
@@ -27,6 +27,12 @@ export default class Game extends Component {
                         />
                     </Col>
                 </Row>
+                <Row style={{marginTop : '20px'}}>
+                    <Button style={{margin : 'auto', borderRadius: '50px'}}>Join Game</Button>
+                </Row>
+                <Row style={{marginTop : '20px'}}>
+                    <h2>Players</h2>
+                </Row>
             </Container>
         </div>)
     }
@@ -42,7 +48,8 @@ class Card extends Component {
                 color: 'white',
                 padding: '37px',
                 width: '200px',
-                height: '200px'
+                height: '200px',
+                margin : 'auto'
 
             }}>
                 <p style={{

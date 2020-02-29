@@ -4,6 +4,7 @@ import { Form, Button, Navbar, Nav, Card, Container, Row, Col } from 'react-boot
 import { Name } from './Constants';
 import Home from './Home';
 import Game from './Game';
+import Box from '3box'
 
 export default class App extends Component {
 
@@ -23,6 +24,12 @@ export default class App extends Component {
   async componentDidMount() {
     await this.getAddressFromMetaMask();
     if (this.state.accounts) {
+      const profile = await Box.getProfile(this.state.accounts[0])
+      console.log('profile', profile)
+      const spaceList = await Box.listSpaces(this.state.accounts[0])
+      console.log('spacelist', spaceList)
+      const followers = await Box.getSpace(this.state.accounts[0], 'MyFollowers');
+      console.log("followers", followers)
       // Now MetaMask's provider has been enabled, we can start working with 3Box
     }
   }
