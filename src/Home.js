@@ -7,20 +7,25 @@ export default class Home extends Component {
       <div className="home">
         <div className="fullpager">
           <div className="banner">
-            <h1>Join the QuaranTeam</h1>
-            <h3>Check in every week with</h3>
-            <h1>9.90DAI</h1>
+            <h1>💰Save. 👯‍♀️ Invite friends. 🎯 Win.</h1>
+            <h3>A blockchain game where punctual penny savers are rewarded.</h3>
+            <br/>
+            <p class="text-muted">Built on <a href="https://aave.com">Aave lending protocol and aDAI</a>.</p>
           </div>
         </div>
         <div className="fullpager">
           <div className="banner">
-            <h4>Check in every two weeks for the whole year</h4>
+            <h1>Rules</h1>
+            <h4>1️⃣ Deposit 9.90 DAI every week for a year.</h4>
             <br />
             <br />
-            <h4>The interest pot is split amongst loyal savers</h4>
+            <h4>2️⃣ Go viral by teaming up with friends and get market beating interest.</h4>
             <br />
             <br />
-            <h4>Everyone gets back 100% of their principal</h4>
+            <h4>3️⃣ The earned interest goes to players finishing the challenge.</h4>
+            <br />
+            <br />
+            <h4>... but don't 👻 ghost a week or all your interest is gone! 😥</h4>
           </div>
         </div>
         <div className="fullpager">
