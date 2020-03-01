@@ -85,7 +85,7 @@ export default class App extends Component {
                 <Route path="/friends">
                   <h1 className="text-center">Friends</h1>
                   <p className="lead text-center">How are your friends doing</p>
-                  <p className="text-center">You have earned extra <strong>0.5%</strong> interest thru your friends</p>
+                  <p className="lead text-center">You have earned extra 🏅<strong>0.5%</strong> interest thru your friends</p>
                   <div className="leaderboard-wrapper">
                     <img src={leaderboardImage} alt="Leaderboard" />
                   </div>
@@ -99,47 +99,45 @@ export default class App extends Component {
                     />
                 </Route>
                 <Route path="/stats">
-                  <h2>Overview</h2>
-                  <table className="table table-listing">
-                    <tr>
-                      <th>Game started</th>
-                      <td>29.2.2020</td>
-                    </tr>
+                  <h2>Week #4</h2>
+                  <table className="table table-listing table-stats">
 
                     <tr>
-                      <th>Players</th>
+                      <th>👻Players</th>
                       <td>4</td>
                     </tr>
 
                     <tr>
-                      <th>Active</th>
+                      <th>🕺Active</th>
                       <td>3</td>
                     </tr>
 
                     <tr>
-                      <th>Lost</th>
+                      <th>💀Lost</th>
                       <td>1</td>
                     </tr>
 
                     <tr>
-                      <th>aDAI prize pot</th>
+                      <th>🎉 aDAI prize pot</th>
                       <td>1.12 DAI</td>
                     </tr>
 
                     <tr>
-                      <th>Days before end</th>
-                      <td>355</td>
+                      <th>⏳ Days before end</th>
+                      <td>335</td>
                     </tr>
                   </table>
                   <h2>Top infectors</h2>
                   <table className="table table-listing">
                     <tr>
                       <th>Patient0</th>
-                      <td>3 friends</td>
+                      <td>0x2f4cE4...</td>
+                      <td>❤️ 3 friends</td>
                     </tr>
                     <tr>
                       <th>Rachel</th>
-                      <td>1 friends</td>
+                      <td>0xe1C6E2...</td>
+                      <td>❤️ 1 friends</td>
                     </tr>
                   </table>
                 </Route>

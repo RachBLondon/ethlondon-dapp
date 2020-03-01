@@ -43,3 +43,7 @@ code {
 th {
   color: #B6509E;
 }
+
+.table-stats th {
+  font-size: 20px;
+}
