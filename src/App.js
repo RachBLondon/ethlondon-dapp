@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Form, Button, Navbar, Nav, Card, Container, Row, Col } from 'react-bootstrap';
+import { FaBars, FaUsers, FaRegChartBar, FaCoins } from 'react-icons/fa';
 import { Name } from './Constants';
 import Home from './Home';
 import Game from './Game';
@@ -9,7 +10,6 @@ import Box from '3box';
 import Web3 from 'web3';
 import { ABI } from './ABI';
 import { ERC20Abi } from './IERC20';
-import Box from '3box'
 import leaderboardImage from './leaderboard.png';
 
 
@@ -61,18 +61,20 @@ export default class App extends Component {
       return <h1>Please install metamask</h1>
     }
 
-
     return (
       <Router>
         <div>
-          <Navbar bg="light" expand="lg" style={{ minHeight: '40px' }}>
+          <Navbar bg="light" expand="true" style={{ minHeight: '40px' }}>
+            <Navbar.Brand href="#home">Viral Saving Game</Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             {this.state.accounts && (
-              <Nav fill style={{ width: "100%" }} >
-                <Nav.Item><Link to="/">Home</Link></Nav.Item>
-                <Nav.Item><Link to="/game">Play and save</Link></Nav.Item>
-                <Nav.Item><Link to="/friends">Friends</Link></Nav.Item>
-                <Nav.Item><Link to="/stats">Stats</Link></Nav.Item>
-              </Nav>
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav fill style={{ width: "100%" }} >
+                  <Nav.Item><Link to="/game"><FaCoins /> Play</Link></Nav.Item>
+                  <Nav.Item><Link to="/friends"><FaUsers /> Friends</Link></Nav.Item>
+                  <Nav.Item><Link to="/stats"><FaRegChartBar />Stats</Link></Nav.Item>
+                </Nav>
+              </Navbar.Collapse>
             )}
           </Navbar>
           <div className="container" style={{ paddingTop: '50px' }}>
