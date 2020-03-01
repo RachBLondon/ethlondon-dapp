@@ -8,6 +8,7 @@ import Box from '3box';
 import Web3 from 'web3';
 import { ABI } from './ABI';
 import { ERC20Abi } from './IERC20';
+import Loader from 'react-loader-spinner';
 
 export default class App extends Component {
 
@@ -89,13 +90,23 @@ export default class App extends Component {
                   />
                 </Route>
                 <Route path="/game">
-                  {!this.state.erc20 && <h1>Loading</h1>}
+                  {!this.state.erc20 &&(
+                                        <Loader
+                                          style={{textAlign : "center" }}
+                                          type="Grid"
+                                          color="#2EBAC6"
+                                          height={100}
+                                          width={100}
+                                          timeout={30000} //3 secs
+                                        />)}
+
+                                     
                   {this.state.erc20 && <Game 
                     accounts={this.state.accounts} 
                     erc20={this.state.erc20} 
                     viralBankcontract={this.state.viralBankcontract}
                     newJoiner={this.state.isNewJoiner} 
-                    />}
+                    />} 
                 </Route>
                 <Route path="/">
                   <Home
