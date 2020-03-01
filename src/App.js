@@ -40,10 +40,15 @@ export default class App extends Component {
 
       const viralBankcontract = new web3.eth.Contract(ABI, address);
       const erc20 = new web3.eth.Contract(ERC20Abi, "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD")
-      console.log("contract", viralBankcontract, erc20)
-      this.setState({viralBankcontract, erc20})
+      console.log("contract", viralBankcontract, erc20);
+      this.setState({viralBankcontract, erc20});
       const MAX_UINT256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
 
+
+      const checkPlayerStatus = await this.state.viralBankcontract.methods.getPlayerState(this.state.accounts[0]).call();
+      const isNewJoiner = checkPlayerStatus == 0;
+      console.log('isNewjoiner', isNewJoiner, 'checkPlayerStatue', checkPlayerStatus)
+      this.setState({isNewJoiner});
       // //approves DAPP to send DAI
       // const receipt = await erc20.methods.approve(address, MAX_UINT256).send({from : this.state.accounts[0]});
       // console.log(receipt)
@@ -84,12 +89,13 @@ export default class App extends Component {
                   />
                 </Route>
                 <Route path="/game">
-                  <Game 
+                  {!this.state.erc20 && <h1>Loading</h1>}
+                  {this.state.erc20 && <Game 
                     accounts={this.state.accounts} 
                     erc20={this.state.erc20} 
                     viralBankcontract={this.state.viralBankcontract}
-                    newJoiner={false} 
-                    />
+                    newJoiner={this.state.isNewJoiner} 
+                    />}
                 </Route>
                 <Route path="/">
                   <Home
