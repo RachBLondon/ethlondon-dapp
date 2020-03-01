@@ -4,14 +4,22 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import ProfileHover from 'profile-hover';
 
 export default class Game extends Component {
+  handleNewJoiner = async () => {
+    const address = "0x9Eb6a33451643A564049f6D65b077E3308717b54"; // kovan
 
-    handleNewJoiner = async()=>{
-        const address = '0x9Eb6a33451643A564049f6D65b077E3308717b54' // kovan
+    const MAX_UINT256 =
+      "115792089237316195423570985008687907853269984665640564039457584007913129639935";
+    const patientZeroAddress = "0xd66E40b0c30595bEc72153B502aC1E0c4785991B";
+    //approves DAPP to send DAI
+    const receipt = await this.props.erc20.methods
+      .approve(address, MAX_UINT256)
+      .send({ from: this.props.accounts[0] });
+    console.log(receipt);
 
-        const MAX_UINT256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
-        const patientZeroAddress = '0xd66E40b0c30595bEc72153B502aC1E0c4785991B'
+        // const MAX_UINT256 = "115792089237316195423570985008687907853269984665640564039457584007913129639935";
+        // const patientZeroAddress = '0xd66E40b0c30595bEc72153B502aC1E0c4785991B'
         //approves DAPP to send DAI
-        const receipt = await this.props.erc20.methods.approve(address, MAX_UINT256).send({from : this.props.accounts[0]});
+        // const receipt = await this.props.erc20.methods.approve(address, MAX_UINT256).send({from : this.props.accounts[0]});
         const startGame = await this.props.viralBankcontract.methods.startGame(patientZeroAddress).send({from : this.props.accounts[0]});
         // console.log(this.props.accounts[0])
         // const box = await Box.openBox(this.props.accounts[0], window.ethereum);
@@ -79,31 +87,42 @@ export default class Game extends Component {
 }
 
 class Card extends Component {
-    render() {
-        return (
-            <div style={{
-                textAlign: 'center', textAlign: 'center',
-                backgroundColor: 'darkblue',
-                borderRadius: '50%',
-                color: 'white',
-                padding: '37px',
-                width: '200px',
-                height: '200px',
-                margin : 'auto'
-
-            }}>
-                <p style={{
-                    marginBottom: '0', lineHeight: '1',
-                    fontWeight: '700'
-                }}>{this.props.title}</p>
-                <p style={{
-                    fontSize: '70px',
-                    marginBottom: '0',
-                    lineHeight: "1.3",
-                    fontWeight: '100'
-                }}>{this.props.amount}</p>
-                {this.props.subtext && <p>{this.props.subtext}</p>}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div
+        style={{
+          textAlign: "center",
+          textAlign: "center",
+          backgroundColor: "darkblue",
+          borderRadius: "50%",
+          color: "white",
+          padding: "37px",
+          width: "200px",
+          height: "200px",
+          margin: "auto"
+        }}
+      >
+        <p
+          style={{
+            marginBottom: "0",
+            lineHeight: "1",
+            fontWeight: "700"
+          }}
+        >
+          {this.props.title}
+        </p>
+        <p
+          style={{
+            fontSize: "70px",
+            marginBottom: "0",
+            lineHeight: "1.3",
+            fontWeight: "100"
+          }}
+        >
+          {this.props.amount}
+        </p>
+        {this.props.subtext && <p>{this.props.subtext}</p>}
+      </div>
+    );
+  }
 }

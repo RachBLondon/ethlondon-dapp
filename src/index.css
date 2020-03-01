@@ -5,9 +5,127 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(100deg, #b6509ebb, #2ebac670);
+  background-size: 600% 200%;
+  -webkit-animation: AnimationName 50s ease infinite;
+  -moz-animation: AnimationName 50s ease infinite;
+  animation: AnimationName 50s linear infinite;
+  height: 100vh;
+  width: 100vw;
+}
+#root {
+  width: 100vw;
+  height: 180vh;
+  top: 0;
+  right: 0;
+  position: absolute;
+  background: url(./assets/aave-white.png);
+  background-color: transparent;
+  background-repeat: repeat;
+  background-size: 20vw;
+  background-attachment: fixed;
+  background-position: inherit;
+  font-family: "Roboto";
 }
 
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 65% 0%;
+  }
+  50% {
+    background-position: 36% 100%;
+  }
+  100% {
+    background-position: 65% 0%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 65% 0%;
+  }
+  50% {
+    background-position: 36% 100%;
+  }
+  100% {
+    background-position: 65% 0%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 65% 0%;
+  }
+  50% {
+    background-position: 36% 100%;
+  }
+  100% {
+    background-position: 65% 0%;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.home {
+  text-align: center;
+}
+
+.fullpager {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 90px);
+  width: 100%;
+  vertical-align: middle;
+}
+
+.fullpager h1:first-child {
+  margin-bottom: 2em;
+}
+
+.banner {
+  margin: auto;
+  background: #fffe;
+  padding: 4em 3em;
+  border-radius: 3em;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
+.leaderboard-wrapper img {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
+.bg-light {
+  background: #B6509E !important;
+  color: white !important;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-toggler {
+  color: white;
+}
+
+.nav-item {
+  padding: 10px;
+}
+
+.nav-item svg {
+  margin: 10px;
+}
+
+.nav-item a {
+  color: white !important;
+  font-size: 16px;
+}
+
+th {
+  color: #B6509E;
+}
+
+.table-stats th {
+  font-size: 20px;
 }

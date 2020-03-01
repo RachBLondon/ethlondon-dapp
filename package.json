@@ -5,10 +5,13 @@
   "dependencies": {
     "3box": "^1.17.1",
     "profile-hover": "^1.1.1",
+    "bootstrap": "^4.4.1",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap-sidebar": "0.0.1",
     "react-dom": "^16.11.0",
     "react-loader-spinner": "^3.1.5",
+    "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "web3": "^1.2.6"
