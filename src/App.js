@@ -28,13 +28,6 @@ export default class App extends Component {
   async componentDidMount() {
     await this.getAddressFromMetaMask();
     if (this.state.accounts) {
-      const profile = await Box.getProfile(this.state.accounts[0])
-      console.log('profile', profile)
-      const spaceList = await Box.listSpaces(this.state.accounts[0])
-      console.log('spacelist', spaceList)
-      const followers = await Box.getSpace(this.state.accounts[0], 'MyFollowers');
-      console.log("followers", followers)
-
       const web3 = new Web3(window.ethereum)
 
       const address = '0x9Eb6a33451643A564049f6D65b077E3308717b54' // kovan
