@@ -87,7 +87,9 @@ code {
   background: #fffe;
   padding: 4em 3em;
   border-radius: 3em;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
 }
+
 .leaderboard-wrapper img {
   max-width: 90%;
   margin: 0 auto;
