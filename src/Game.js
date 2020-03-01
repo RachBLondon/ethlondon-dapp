@@ -82,8 +82,8 @@ export default class Game extends Component {
                         <Row>
                             <Col>
                                 <Card
-                                    title={"Monthly Saving Target"}
-                                    amount={"$20"}
+                                    title={"Weekly Saving Target"}
+                                    amount={"DAI 9.90"}
                                 />
                             </Col>
                             <Col>
