@@ -16,7 +16,8 @@ import {
   FaRegChartBar,
   FaCoins,
   FaHome,
-  FaGhost
+  FaGhost,
+  FaGithub
 } from "react-icons/fa";
 import { Name } from "./Constants";
 import Home from "./Home";
@@ -111,6 +112,14 @@ export default class App extends Component {
                       Stats
                     </Link>
                   </Nav.Item>
+
+                  <Nav.Item>
+                    <a href="https://github.com/miohtama/viral-aave-save-game">
+                      <FaGithub />
+                      Github
+                    </a>
+                  </Nav.Item>
+
                 </Nav>
               </Navbar.Collapse>
             )}
