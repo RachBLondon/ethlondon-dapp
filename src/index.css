@@ -25,6 +25,7 @@ body {
   background-size: 20vw;
   background-attachment: fixed;
   background-position: inherit;
+  font-family: "Roboto";
 }
 
 @-webkit-keyframes AnimationName {
@@ -86,4 +87,43 @@ code {
   background: #fffe;
   padding: 4em 3em;
   border-radius: 3em;
+}
+.leaderboard-wrapper img {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
+.bg-light {
+  background: #B6509E !important;
+  color: white !important;
+}
+
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar-toggler {
+  color: white;
+}
+
+.nav-item {
+  padding: 10px;
+}
+
+.nav-item svg {
+  margin: 10px;
+}
+
+.nav-item a {
+  color: white !important;
+  font-size: 16px;
+}
+
+th {
+  color: #B6509E;
+}
+
+.table-stats th {
+  font-size: 20px;
 }
