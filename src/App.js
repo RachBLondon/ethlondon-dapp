@@ -15,7 +15,8 @@ import {
   FaUsers,
   FaRegChartBar,
   FaCoins,
-  FaHome
+  FaHome,
+  FaGhost
 } from "react-icons/fa";
 import { Name } from "./Constants";
 import Home from "./Home";
@@ -84,7 +85,7 @@ export default class App extends Component {
       <Router>
         <div>
           <Navbar bg="light" expand="true" style={{ minHeight: "40px" }}>
-            <Navbar.Brand href="#home">Viral Saving Game</Navbar.Brand>
+            <Navbar.Brand href="#home"><FaGhost /> GoodGhosting</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             {this.state.accounts && (
               <Navbar.Collapse id="responsive-navbar-nav">
