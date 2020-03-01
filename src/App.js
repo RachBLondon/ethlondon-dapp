@@ -96,7 +96,7 @@ export default class App extends Component {
       <Router>
         <div>
           <Navbar bg="light" expand="true" style={{ minHeight: "40px" }}>
-            <Navbar.Brand href="#home"><FaGhost /> GoodGhosting</Navbar.Brand>
+            <Navbar.Brand href="#home"><FaGhost /> GoodGhosting.com</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             {this.state.accounts && (
               <Navbar.Collapse id="responsive-navbar-nav">
