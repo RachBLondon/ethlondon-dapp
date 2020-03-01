@@ -26,28 +26,28 @@ export default class Home extends Component {
         <div className="fullpager">
           <Carousel wrap={false} slide={false}>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/1.svg`} />
+              <img className="d-block w-100" src={`./assets/1.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/2.svg`} />
+              <img className="d-block w-100" src={`./assets/2.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/3.svg`} />
+              <img className="d-block w-100" src={`./assets/3.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/4.svg`} />
+              <img className="d-block w-100" src={`./assets/4.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/5.svg`} />
+              <img className="d-block w-100" src={`./assets/5.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/6.svg`} />
+              <img className="d-block w-100" src={`./assets/6.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/7.svg`} />
+              <img className="d-block w-100" src={`./assets/7.png`} />
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={`./assets/8.svg`} />
+              <img className="d-block w-100" src={`./assets/8.png`} />
             </Carousel.Item>
           </Carousel>
         </div>
