@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "3box": "^1.17.1",
+    "3box": "^1.22.2",
     "profile-hover": "^1.1.1",
     "bootstrap": "^4.4.1",
     "react": "^16.11.0",
